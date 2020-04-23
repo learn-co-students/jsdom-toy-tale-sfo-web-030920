@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 7
     },
     {
       "id": 2,
@@ -47,6 +47,36 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Dinosaurin",
+      "image": "http://umich.edu/~chemh215/W11HTML/SSG5/ssg5.2/FRex.png",
+      "id": 17
+    },
+    {
+      "name": "EL jefe",
+      "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
+      "id": 18
+    },
+    {
+      "name": "jefe 2",
+      "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
+      "id": 19
+    },
+    {
+      "name": "jefe 2",
+      "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
+      "id": 20
+    },
+    {
+      "name": "jefe 2",
+      "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
+      "id": 21
+    },
+    {
+      "name": "perin",
+      "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
+      "id": 22
     }
   ]
 }
