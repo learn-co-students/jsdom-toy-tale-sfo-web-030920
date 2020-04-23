@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   fetchToy();
   createToy();
+  likeIncrement()
 });
 
 function fetchToy() {
@@ -69,32 +70,30 @@ function createToy() {
   });
 }
 
-function likeIncrement(toyId) {
-  fetch(`${baseUrl}/${toyId}`, { method: "PATCH" });
+function likeIncrement() {
+  toyContainer.addEventListener("click", (e) => {
+    console.log(e.target.parentElement.id);
+    let toyId = e.target.parentElement.id;
+    let intNum = parseInt(toyId);
+    let pTag = e.target.parentElement.getElementsByTagName("p");
+    console.log(intNum);
+    console.log(pTag[0].innerText.split("")[0]);
+    previousCountLikes = pTag[0].innerText.split("")[0];
+    console.log(previousCountLikes);
+    likes = parseInt(previousCountLikes) + 1;
+    console.log(likes);
+
+    fetch(`http://localhost:3000/toys/${toyId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        likes: likes,
+      }),
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  });
 }
-
-toyContainer.addEventListener("click", (e) => {
-  console.log(e.target.parentElement.id);
-  let toyId = e.target.parentElement.id;
-  let intNum = parseInt(toyId);
-  let pTag = e.target.parentElement.getElementsByTagName("p");
-  console.log(intNum);
-  console.log(pTag[0].innerText.split("")[0]);
-  previousCountLikes = pTag[0].innerText.split("")[0];
-  console.log(previousCountLikes);
-  likes = parseInt(previousCountLikes) + 1;
-  console.log(likes);
-
-  fetch(`http://localhost:3000/toys/${toyId}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      likes: likes,
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
-});
